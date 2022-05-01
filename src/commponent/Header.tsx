@@ -1,24 +1,29 @@
 import {Link} from "react-router-dom";
 import React from "react";
-
+import s from "./Header.module.css"
 type HeaderPropsType = {
 
 }
 
+
+
 const menu = {
-    title: [1, 2, 3]
+    title: [{title: "Login", link: "login"},
+        {title: "Registration", link: "registration"},
+    ]
 }
 
 
 export const Header = (props: HeaderPropsType) => {
     return (
         <main>
-            <Link to="/expenses">Expenses</Link>
-            <Link to="/expenses">Expenses</Link>
-            <Link to="/header">Header</Link>
 
-            {menu.title.map((el: number) =>  <div> {el} </div>)}
-            Hello world!!!
+
+            {menu.title.map((el: { title: string, link: string }) =>
+                <Link className={s.linkStyle} to={el.link}>{el.title}</Link>
+            )}
+
+            <h1>Header</h1>
 
         </main>
     )

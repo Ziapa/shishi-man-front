@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-import {Link, Route, Routes} from "react-router-dom";
-import Expenses from './commponent/Expenses';
+import {Route, Routes} from "react-router-dom";
 import {Header} from "./commponent/Header";
+import Registration from "./commponent/Registration";
+import Login from './commponent/Login';
 
 function App() {
     return (
         <div className="App">
-<Header/>
+            <Header/>
             <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="expenses" element={<Expenses />} />
-                <Route path="header" element={<Header />} />
+                <Route path="/" element={<App/>}/>
+                <Route path="login" element={<Login/>}/>
+                <Route path="registration" element={<Registration/>}/>
             </Routes>
         </div>
     );
