@@ -4,6 +4,7 @@ import s from "./Input.module.css";
 export type InputPropsType = {
     label: string
     value: string
+    id: string
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -11,7 +12,7 @@ export type InputPropsType = {
 export const Input = (props: InputPropsType) => {
     return (<>
             <label> {props.label} </label>
-            <input className={s.input} type="text" placeholder={props.label} value={props.value}
+            <input id={props.id} className={s.input} type="text" placeholder={props.label} value={props.value}
                    onChange={props.onChange}/>
         </>
     )

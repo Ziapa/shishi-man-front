@@ -8,11 +8,13 @@ export default function Login() {
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
-    const onChangeHandlerEmail = (e: ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.currentTarget.value)
-    }
-    const onChangeHandlerPassword = (e: ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.currentTarget.value)
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.currentTarget.id === "email") {
+            setEmail(e.currentTarget.value)
+        } else if (e.currentTarget.id === "password") {
+            setPassword(e.currentTarget.value)
+        }
+
     }
 
     const login = (email: string, password: string) => {
@@ -30,13 +32,12 @@ export default function Login() {
             })
     }
 
-
     return (
         <main style={{padding: "1rem 0"}}>
             <h2>Login</h2>
             <div>
-                <Input label={"email"} value={email} onChange={onChangeHandlerEmail}></Input>
-                <Input label={"password"} value={password} onChange={onChangeHandlerPassword}></Input>
+                <Input label={"email"} id={"email"} value={email} onChange={onChangeHandler}></Input>
+                <Input label={"password"} id={"password"} value={password} onChange={onChangeHandler}></Input>
                 <button onClick={() => login(email, password)}> Login</button>
                 <button onClick={getUsers}> GetUsers</button>
             </div>
