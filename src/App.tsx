@@ -3,8 +3,8 @@ import './App.css';
 import {Route, Routes} from "react-router-dom";
 import {Header} from "./commponent/Header";
 import Registration from "./commponent/Registration";
-import Login from './commponent/Login';
 import {Users} from "./commponent/Users/Users";
+import Login from "./commponent/Login/Login";
 
 function App() {
     return (
@@ -15,7 +15,9 @@ function App() {
                 <Route path="login" element={<Login/>}/>
                 <Route path="registration" element={<Registration/>}/>
                 <Route path="users" element={<Users/>}/>
+
             </Routes>
+            dfhdfhgdsf
         </div>
     );
 }

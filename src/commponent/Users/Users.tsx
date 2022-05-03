@@ -14,8 +14,8 @@ export const Users = (props: UsersPropsType) => {
     return (
         <div>
 
-            {ArrayUsers.map((el: { email: string, role: string, ban: boolean } ) => {
-                return <User email={el.email} role={el.role} ban={el.ban}></User>
+            {ArrayUsers.map((el: { email: string, role: string, ban: boolean }, index:number ) => {
+                return <User key={index} email={el.email} role={el.role} ban={el.ban}></User>
             })}
 
 
